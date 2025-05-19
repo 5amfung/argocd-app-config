@@ -5,12 +5,15 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
+  # Source is the repository that contains the application configuration.
   source:
+    # This is the URL of the repository that contains the application configuration.
     repoURL: https://github.com/5amfung/argocd-app-config.git
     targetRevision: HEAD
+    # This is the path to the application configuration.
     path: dev
   destination:
+    # This is the default Kubernetes server that ArgoCD uses to interact with the cluster.
     server: https://kubernetes.default.svc
     namespace: myapp
 
